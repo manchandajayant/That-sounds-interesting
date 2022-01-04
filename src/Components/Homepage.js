@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Map from './Map';
-import toast, { Toaster,ToastBar } from 'react-hot-toast';
+
+import toast, { Toaster, ToastBar } from 'react-hot-toast';
+
 export default function Homepage() {
 	useEffect(() => {
 		toast('Select a place by clicking one of the icons on the Map');
