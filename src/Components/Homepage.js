@@ -3,13 +3,13 @@ import Map from './Map';
 
 import toast, { Toaster, ToastBar } from 'react-hot-toast';
 
-export default function Homepage() {
+export default function Homepage({ controllerVal }) {
 	useEffect(() => {
 		toast('Select a place by clicking one of the icons on the Map');
 	}, []);
 	return (
 		<div>
-			<Map />
+			<Map controllerVal={controllerVal} />
 			<Toaster
 				position="top-left"
 				reverseOrder={false}

@@ -42,9 +42,32 @@ body{
 .text-add-place{
   text-align: end;
   font-size: 14px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.text-add-place p a{
+  text-decoration: none;
+  color: aliceblue;
 }
 
 .text-heading-nav{
   text-align: start;
   width: 50%;
+}
+
+.input-group{
+  width: 35%;
+}
+
+#div-add-place{
+  margin-top: 15vh;
+}
+
+#div-add-place-file-selected{
+  margin-top: 0px;
+}
+
+.lead{
+  font-family: 'Chivo', sans-serif;
 }
