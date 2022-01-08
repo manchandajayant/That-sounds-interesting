@@ -2,7 +2,6 @@ import os
 import json
 from flask import Flask
 from flask_jwt_extended import JWTManager
-from src.constants.status_codes import HTTP_500_INTERNAL_SERVER_ERROR
 
 from src.controllers.auth.route import auth
 from src.spaces import spaces
