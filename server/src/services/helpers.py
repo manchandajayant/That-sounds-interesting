@@ -6,3 +6,9 @@ def check_email(email):
         return True
     else:
         return False
+
+
+def set_default(obj):
+    if isinstance(obj, set):
+        return list(obj)
+    raise TypeError

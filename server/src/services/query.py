@@ -1,4 +1,5 @@
 import logging
+import re
 import sys
 import os
 from mysql.connector import pooling
@@ -27,21 +28,22 @@ class query:
             pool_name="cnx_pool", pool_size=20, autocommit=True,  **db_config)
         return self.cnxpool
 
-    def execute_query(self, table_name, query):
-        cnx = self.create_connection_pool()
-        connection = cnx.get_connection()
-        cursor = connection.cursor()
-        result = cursor.execute(query)
-        cursor.close()
-        connection.close()
-        return result
-
-    def get_data_query(self, table_name, query):
+    def execute_query(self,query):
         cnx = self.create_connection_pool()
         connection = cnx.get_connection()
         cursor = connection.cursor()
         cursor.execute(query)
         result = cursor.fetchone()
+        cursor.close()
+        connection.close()
+        return result
+
+    def get_data_query(self,query):
+        cnx = self.create_connection_pool()
+        connection = cnx.get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query)
+        result = cursor.fetchall()
         cursor.close()
         connection.close()
         return result

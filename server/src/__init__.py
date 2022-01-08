@@ -1,7 +1,7 @@
 from flask import Flask
 import os
 
-from src.auth import auth
+from src.controllers.auth.route import auth
 from src.spaces import spaces
 
 
