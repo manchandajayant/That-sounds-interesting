@@ -1,6 +1,4 @@
 import logging
-import re
-import sys
 import os
 from mysql.connector import pooling
 from mysql.connector import connect
@@ -8,7 +6,7 @@ from mysql.connector import connect
 
 class query:
     def __init__(self) -> None:
-        logging.basicConfig(filename="sql_query.log",
+        logging.basicConfig(filename="logs/sql_query.log",
                             format='%(asctime)s %(message)s',
                             filemode='w')
 

@@ -2,22 +2,21 @@ from flask import Blueprint, request
 from src.controllers.auth.crud import CRUD
 
 auth = Blueprint("auth", __name__, url_prefix="/api/v1/auth")
+db = CRUD()
+
 
 @auth.post('/register')
 def register():
-    username = request.json['username']
-    email = request.json['email']
-    password = request.json['password']
-    crud = CRUD()
-    create = crud.create(email,username,password)
+    username = request.json.get('username')
+    email = request.json.get('email')
+    password = request.json.get('password')
+    create = db.create(email, username, password)
     return create
 
 
-
-
-
 @auth.get("/login")
-def me():
-    # sql_query = f"SELECT * FROM {users_table} WHERE id={}"
-    # print(db_query.execute_query("users"))
-    return {"user": "me"}
+def login():
+    email = request.json.get('email')
+    password = request.json.get('password')
+    read = db.read(email, password)
+    return read
