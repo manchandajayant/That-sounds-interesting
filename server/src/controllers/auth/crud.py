@@ -2,9 +2,12 @@ import json
 import os
 from src.services.query import query
 from src.services.helpers import check_email, set_default
-from src.constants.status_codes import HTTP_401_UNAUTHORIZED, HTTP_404_NOT_FOUND, HTTP_409_CONFLICT, HTTP_400_BAD_REQUEST, HTTP_200_OK
+from src.constants.status_codes import HTTP_201_CREATED,\
+HTTP_401_UNAUTHORIZED, HTTP_404_NOT_FOUND,\
+HTTP_409_CONFLICT, HTTP_400_BAD_REQUEST, HTTP_200_OK
+
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_jwt_extended import create_access_token, create_refresh_token
+from flask_jwt_extended import create_access_token
 
 
 class CRUD:
@@ -48,7 +51,7 @@ class CRUD:
         create_user = self.db_query.execute_query(CREATE_USER_SQL)
 
         if create_user is None:
-            return json.dumps({"user created succesfully"}, default=set_default, sort_keys=True, indent=4), HTTP_200_OK
+            return json.dumps({"user created succesfully"}, default=set_default, sort_keys=True, indent=4), HTTP_201_CREATED
 
     def read(self, email, password):
         # Validate data
@@ -63,16 +66,12 @@ class CRUD:
                 get_user_details[0][2], password)
 
             if match_password:
-                refresh_token = create_refresh_token(
-                    identity=get_user_details[0][0])
-
                 access_token = create_access_token(
                     identity=get_user_details[0][0])
 
                 return json.dumps({
                     "user": {
                         "access_token": access_token,
-                        "refresh_token": refresh_token,
                         "name": get_user_details[0][3],
                         "email": get_user_details[0][1]
                     }
