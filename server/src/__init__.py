@@ -1,10 +1,11 @@
 import os
+import json
 from flask import Flask
 from flask_jwt_extended import JWTManager
+from src.constants.status_codes import HTTP_500_INTERNAL_SERVER_ERROR
 
 from src.controllers.auth.route import auth
 from src.spaces import spaces
-
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -21,5 +22,6 @@ def create_app(test_config=None):
 
     app.register_blueprint(auth)
     app.register_blueprint(spaces)
+	
 
     return app
