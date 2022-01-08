@@ -26,7 +26,7 @@ class query:
             pool_name="cnx_pool", pool_size=20, autocommit=True,  **db_config)
         return self.cnxpool
 
-    def execute_query(self,query):
+    def execute_query(self, query):
         cnx = self.create_connection_pool()
         connection = cnx.get_connection()
         cursor = connection.cursor()
@@ -36,7 +36,7 @@ class query:
         connection.close()
         return result
 
-    def get_data_query(self,query):
+    def get_data_query(self, query):
         cnx = self.create_connection_pool()
         connection = cnx.get_connection()
         cursor = connection.cursor()
