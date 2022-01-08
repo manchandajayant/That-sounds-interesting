@@ -1,7 +1,5 @@
 from flask import Flask
-import os,sys
-
-# import pymysql.cursors
+import os
 
 from src.auth import auth
 from src.spaces import spaces
