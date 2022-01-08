@@ -1,9 +1,11 @@
 from mysql import connector
 from mysql.connector import connect
-import logging,os,sys
+import logging
+import os
+import sys
 from dotenv import load_dotenv
 
-logging.basicConfig(filename="create-tables.log",
+logging.basicConfig(filename="logs/create-tables.log",
                     format='%(asctime)s %(message)s',
                     filemode='w')
 
@@ -21,14 +23,15 @@ db_server = os.getenv('SERVER')
 
 def create_connection():
     db_config = {
-            'host' : db_server,
-            'user' : db_username,
-            'password' : db_password,
-            'database' : db_name,
-            'port' : 3306,
+        'host': db_server,
+        'user': db_username,
+        'password': db_password,
+        'database': db_name,
+        'port': 3306,
     }
     cnx = connect(autocommit=True, **db_config)
     return cnx
+
 
 def check_if_tables_exist_or_create(connection):
     SQL_CHECK_TABLES_EXIST = f"SELECT COUNT(*) AS tables_found_count\
