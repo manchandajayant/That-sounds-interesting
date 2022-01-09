@@ -2,9 +2,9 @@ import json
 import os
 import decimal
 import datetime
-import cloudinary.uploader
+
 from src.services.query import query
-from src.services.helpers import set_default
+from src.services.helpers import helpers
 from src.constants.status_codes import HTTP_201_CREATED,\
     HTTP_401_UNAUTHORIZED, HTTP_404_NOT_FOUND,\
     HTTP_204_NO_CONTENT, HTTP_400_BAD_REQUEST, HTTP_200_OK
@@ -14,10 +14,11 @@ class CRUD():
     def __init__(self) -> None:
         self.db_query = query()
         self.spaces_table = os.environ.get('space_table')
-
+        self.helpers = helpers()
+        
     def create_space(self, name, latitude, longitude, user_id, image):
         if name is None or latitude is None or longitude is None or user_id is None:
-            return json.dumps({'error': 'Invalid Request, missing parameters'}, default=set_default, sort_keys=True, indent=4), HTTP_400_BAD_REQUEST
+            return json.dumps({'error': 'Invalid Request, missing parameters'}, default=self.helpers.set_default, sort_keys=True, indent=4), HTTP_400_BAD_REQUEST
         if image is None:
             image = ''
 
@@ -27,7 +28,7 @@ class CRUD():
         CREATE_A_SPACE = self.db_query.get_data_query(CREATE_A_SPACE_SQL)
 
         if CREATE_A_SPACE is None:
-            return json.dumps({"space created succesfully"}, default=set_default, sort_keys=True, indent=4), HTTP_201_CREATED
+            return json.dumps({"space created succesfully"}, default=self.helpers.set_default, sort_keys=True, indent=4), HTTP_201_CREATED
 
     def read_all_spaces(self):
         GET_ALL_SPACES_SQL = f'SELECT * FROM `{self.spaces_table}`'
@@ -49,11 +50,11 @@ class CRUD():
 
             return json.dumps(data, sort_keys=True, indent=4), HTTP_200_OK
         else:
-            return json.dumps({"No data found"}, default=set_default, sort_keys=True, indent=4,), HTTP_204_NO_CONTENT
+            return json.dumps({"No data found"}, default=self.helpers.set_default, sort_keys=True, indent=4,), HTTP_204_NO_CONTENT
 
-    def upload_audio(self, audio, space_id):
+    def upload_audio(self, audio, space_id,filename):
 
-        upload_result = cloudinary.uploader.upload(audio, resource_type="raw")
+        upload_result = self.helpers.audio_uploader(audio,space_id,filename)
 
         if 'url' in upload_result:
             file_url = upload_result['url']
