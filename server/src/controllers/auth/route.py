@@ -9,24 +9,27 @@ db = CRUD()
 
 @auth.post('/register')
 def register():
-    username = request.json.get('username')
-    email = request.json.get('email')
-    password = request.json.get('password')
-    create = db.create(email, username, password)
-    return create
+    if request.json is not None:
+        username = request.json.get(
+            'username') if 'username' in request.json else None
+        email = request.json.get('email') if 'username' in request.json else None
+        password = request.json.get(
+            'password') if 'username' in request.json else None
+        create = db.create(email, username, password)
+        return create
 
 
 @auth.get("/login")
 def login():
-    email = request.json.get('email')
-    password = request.json.get('password')
-    read = db.read(email, password)
-    return read
+    if request.json is not None:
+        email = request.json.get('email') if 'email' in request.json else None
+        password = request.json.get(
+            'password') if 'password' in request.json else None
+        read = db.read(email, password)
+        return read
 
 
 @auth.get("/me")
 @jwt_required()
 def get_me():
 	return "ME"
-
-

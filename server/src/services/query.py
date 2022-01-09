@@ -36,12 +36,21 @@ class query:
         connection.close()
         return result
 
-    def get_data_query(self, query):
+    def get_data_query(self, query, column_names=False):
         cnx = self.create_connection_pool()
         connection = cnx.get_connection()
         cursor = connection.cursor()
         cursor.execute(query)
         result = cursor.fetchall()
-        cursor.close()
-        connection.close()
-        return result
+
+        if column_names is True:
+            columns = cursor.description
+            fields = map(lambda x: x[0], columns)
+            result = [dict(zip(fields, row)) for row in result]
+            cursor.close()
+            connection.close()
+            return result
+        else:
+            cursor.close()
+            connection.close()
+            return result
