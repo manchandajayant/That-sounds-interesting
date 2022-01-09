@@ -13,21 +13,21 @@ helper = helpers()
 
 
 @spaces.get('/')
-# @jwt_required()
+@jwt_required()
 def get_all_spaces():
     spaces = db.read_all_spaces()
     return spaces
 
 
 @spaces.get("/<int:id>")
-# @jwt_required()
+@jwt_required()
 def get_space(id):
     space = db.read_a_space(id)
-    return {"space": "id"}
+    return space
 
 
 @spaces.post("/create")
-# @jwt_required()
+@jwt_required()
 def create_space():
 
     if request.json is not None:
@@ -53,7 +53,7 @@ def create_space():
 
 
 @spaces.post("/upload")
-# @jwt_required
+@jwt_required
 def upload_audio():
     if request.files is not None:
         space_id = request.form.get('space_id')

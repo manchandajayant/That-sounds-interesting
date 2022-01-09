@@ -13,7 +13,7 @@ class CRUD():
         self.db_query = query()
         self.spaces_table = os.environ.get('space_table')
         self.helpers = helpers()
-        
+
     def create_space(self, name, latitude, longitude, user_id, image):
         if name is None or latitude is None or longitude is None or user_id is None:
             return json.dumps({'error': 'Invalid Request, missing parameters'}, default=self.helpers.set_default, sort_keys=True, indent=4), HTTP_400_BAD_REQUEST
@@ -24,14 +24,13 @@ class CRUD():
 
         CREATE_A_SPACE_SQL = f"INSERT INTO `spaces` (`name`, `latitude`, `longitude`, `user_id`, `image`, `created_on`) VALUES ('{name}','{latitude}','{longitude}','{user_id}', '{image}', CURRENT_TIMESTAMP);"
         CREATE_A_SPACE = self.db_query.get_data_query(CREATE_A_SPACE_SQL)
- 
+
         if CREATE_A_SPACE is not True:
             return json.dumps({"space created succesfully"}, default=self.helpers.set_default, sort_keys=True, indent=4), HTTP_201_CREATED
-    
 
-    def upload_audio(self, audio, space_id,filename):
+    def upload_audio(self, audio, space_id, filename):
 
-        upload_result = self.helpers.audio_uploader(audio,space_id,filename)
+        upload_result = self.helpers.audio_uploader(audio, space_id, filename)
 
         if 'url' in upload_result:
             file_url = upload_result['url']
@@ -50,7 +49,12 @@ class CRUD():
         else:
             return json.dumps({"No data found"}, default=self.helpers.set_default, sort_keys=True, indent=4,), HTTP_204_NO_CONTENT
 
-    def read_a_space(self,id):
+    def read_a_space(self, id):
         GET_A_SPACE_SQL = f"SELECT * FROM `{self.spaces_table}` WHERE id='{id}'"
-        GET_A_SPACE = self.db_query.get_data_query(GET_A_SPACE_SQL)
-        print(GET_A_SPACE[0])
+        GET_A_SPACE = self.db_query.get_data_query(
+            GET_A_SPACE_SQL, column_names=True)
+        if GET_A_SPACE:
+            data = self.helpers.process_data_types(GET_A_SPACE)
+            return json.dumps(data, sort_keys=True, indent=4), HTTP_200_OK
+        else:
+            return json.dumps({"No data found"}, default=self.helpers.set_default, sort_keys=True, indent=4,), HTTP_204_NO_CONTENT

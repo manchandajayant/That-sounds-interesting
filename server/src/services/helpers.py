@@ -3,6 +3,7 @@ import cloudinary.uploader
 import decimal
 import datetime
 
+
 class helpers:
     def __init__(self) -> None:
         pass
@@ -24,7 +25,7 @@ class helpers:
             audio, resource_type="raw", folder=f"impulse_responses_spaces/{id}/", public_id=filename)
         return result
 
-    def process_data_types(self,data):
+    def process_data_types(self, data):
         return_value = []
         for spaces in data:
             for k, v in spaces.items():
