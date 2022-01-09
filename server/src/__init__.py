@@ -4,7 +4,7 @@ from flask import Flask
 from flask_jwt_extended import JWTManager
 
 from src.controllers.auth.route import auth
-from src.spaces import spaces
+from src.controllers.spaces.route import spaces
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
