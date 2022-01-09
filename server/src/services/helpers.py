@@ -1,6 +1,7 @@
 import re
 import cloudinary.uploader
-
+import decimal
+import datetime
 
 class helpers:
     def __init__(self) -> None:
@@ -22,3 +23,18 @@ class helpers:
         result = cloudinary.uploader.upload(
             audio, resource_type="raw", folder=f"impulse_responses_spaces/{id}/", public_id=filename)
         return result
+
+    def process_data_types(self,data):
+        return_value = []
+        for spaces in data:
+            for k, v in spaces.items():
+                if isinstance(v, decimal.Decimal):
+                    v = float(v)
+                    return_value.append({k: v})
+                elif isinstance(v, datetime.datetime):
+                    v = str(v)
+                    return_value.append({k: v})
+                else:
+                    v = str(v)
+                    return_value.append({k: v})
+        return return_value
