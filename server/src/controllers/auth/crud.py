@@ -3,8 +3,8 @@ import os
 from src.services.query import query
 from src.services.helpers import check_email, set_default
 from src.constants.status_codes import HTTP_201_CREATED,\
-HTTP_401_UNAUTHORIZED, HTTP_404_NOT_FOUND,\
-HTTP_409_CONFLICT, HTTP_400_BAD_REQUEST, HTTP_200_OK
+    HTTP_401_UNAUTHORIZED, HTTP_404_NOT_FOUND,\
+    HTTP_409_CONFLICT, HTTP_400_BAD_REQUEST, HTTP_200_OK
 
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_jwt_extended import create_access_token
@@ -18,6 +18,10 @@ class CRUD:
     def create(self, email, username, password):
         # Validate data
         if email is None or password is None or username is None:
+            return json.dumps({'error': 'Invalid Request, information is missing'}, default=set_default, sort_keys=True, indent=4), HTTP_400_BAD_REQUEST
+
+        # check for empty strings
+        if len(email) is 0 or len(password) is 0 or len(username) is 0:
             return json.dumps({'error': 'Invalid Request, information is missing'}, default=set_default, sort_keys=True, indent=4), HTTP_400_BAD_REQUEST
 
         # Validate Email
