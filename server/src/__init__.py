@@ -1,7 +1,10 @@
 import os
 from datetime import timedelta
 import json
+import cloudinary
+
 from flask import Flask
+from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 
 from src.controllers.auth.route import auth
@@ -20,6 +23,10 @@ def create_app(test_config=None):
     else:
         app.config.from_mapping(test_config)
 
+    cloudinary.config(cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'), api_key=os.getenv('CLOUDINARY_API_KEY'),
+                      api_secret=os.getenv('CLOUDINARY_API_SECRET'))
+
+    CORS(app)
     JWTManager(app)
 
     app.register_blueprint(auth)

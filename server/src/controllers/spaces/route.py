@@ -1,8 +1,9 @@
 import re
-from flask import Blueprint, request
 import json
+
+from flask import Blueprint, request
 from flask_jwt_extended import jwt_required
-from src.constants.status_codes import HTTP_400_BAD_REQUEST
+from src.constants.status_codes import HTTP_200_OK, HTTP_400_BAD_REQUEST
 from src.controllers.spaces.crud import CRUD
 from src.services.helpers import set_default
 
@@ -46,5 +47,17 @@ def create_space():
             name, latitude, longitude, user_id, image)
 
         return create_space
+    else:
+        return json.dumps({"Error","Bad request"},default=set_default),HTTP_400_BAD_REQUEST
+
+
+@spaces.post("/upload")
+# @jwt_required
+def upload_audio():
+    if request.files is not None:
+        space_id = request.form.get('space_id')
+        file = request.files['audio']
+        upload = db.upload_audio(file,space_id)
+        return json.dumps(upload,default=set_default),HTTP_200_OK
     else:
         return json.dumps({"Error","Bad request"},default=set_default),HTTP_400_BAD_REQUEST

@@ -2,6 +2,7 @@ import json
 import os
 import decimal
 import datetime
+import cloudinary.uploader
 from src.services.query import query
 from src.services.helpers import set_default
 from src.constants.status_codes import HTTP_201_CREATED,\
@@ -12,7 +13,7 @@ from src.constants.status_codes import HTTP_201_CREATED,\
 class CRUD():
     def __init__(self) -> None:
         self.db_query = query()
-        self.users_table = os.environ.get('space_table')
+        self.spaces_table = os.environ.get('space_table')
 
     def create_space(self, name, latitude, longitude, user_id, image):
         if name is None or latitude is None or longitude is None or user_id is None:
@@ -29,7 +30,7 @@ class CRUD():
             return json.dumps({"space created succesfully"}, default=set_default, sort_keys=True, indent=4), HTTP_201_CREATED
 
     def read_all_spaces(self):
-        GET_ALL_SPACES_SQL = f'SELECT * FROM `{self.users_table}`'
+        GET_ALL_SPACES_SQL = f'SELECT * FROM `{self.spaces_table}`'
         GET_ALL_SPACES = self.db_query.get_data_query(
             GET_ALL_SPACES_SQL, column_names=True)
 
@@ -49,3 +50,13 @@ class CRUD():
             return json.dumps(data, sort_keys=True, indent=4), HTTP_200_OK
         else:
             return json.dumps({"No data found"}, default=set_default, sort_keys=True, indent=4,), HTTP_204_NO_CONTENT
+
+    def upload_audio(self, audio, space_id):
+
+        upload_result = cloudinary.uploader.upload(audio, resource_type="raw")
+
+        if 'url' in upload_result:
+            file_url = upload_result['url']
+            UPDATE_FILE_URL_SQL = f"UPDATE `{self.spaces_table}` set file_url='{file_url}' WHERE id='{space_id}'"
+            UPDATE_FILE_URL = self.db_query.get_data_query(UPDATE_FILE_URL_SQL)
+            return upload_result
