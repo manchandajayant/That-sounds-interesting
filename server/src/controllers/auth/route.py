@@ -12,7 +12,8 @@ def register():
     if request.json is not None:
         username = request.json.get(
             'username') if 'username' in request.json else None
-        email = request.json.get('email') if 'username' in request.json else None
+        email = request.json.get(
+            'email') if 'username' in request.json else None
         password = request.json.get(
             'password') if 'username' in request.json else None
         create = db.create(email, username, password)

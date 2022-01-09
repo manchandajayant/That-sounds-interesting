@@ -11,18 +11,19 @@ db = CRUD()
 spaces = Blueprint("spaces", __name__, url_prefix="/api/v1/spaces")
 helper = helpers()
 
+
 @spaces.get('/')
 @jwt_required()
 def get_all_spaces():
     spaces = db.read_all_spaces()
-    # print(spaces)
     return spaces
 
 
 @spaces.get("/<int:id>")
 @jwt_required()
 def get_space(id):
-    return {"space": id}
+    space = db.read_a_space(id)
+    return space
 
 
 @spaces.post("/create")
@@ -48,17 +49,17 @@ def create_space():
 
         return create_space
     else:
-        return json.dumps({"Error","Bad request"},default=helper.set_default),HTTP_400_BAD_REQUEST
+        return json.dumps({"Error", "Bad request"}, default=helper.set_default), HTTP_400_BAD_REQUEST
 
 
 @spaces.post("/upload")
-# @jwt_required
+@jwt_required
 def upload_audio():
     if request.files is not None:
         space_id = request.form.get('space_id')
         file = request.files['audio']
         filename = file.filename
-        upload = db.upload_audio(file,space_id,filename)
-        return json.dumps(upload,default=helper.set_default),HTTP_200_OK
+        upload = db.upload_audio(file, space_id, filename)
+        return json.dumps(upload, default=helper.set_default), HTTP_200_OK
     else:
-        return json.dumps({"Error","Bad request"},default=helper.set_default),HTTP_400_BAD_REQUEST
+        return json.dumps({"Error", "Bad request"}, default=helper.set_default), HTTP_400_BAD_REQUEST

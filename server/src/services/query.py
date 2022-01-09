@@ -32,11 +32,9 @@ class query:
         cursor = connection.cursor()
         cursor.execute(query)
         result = cursor.fetchall()
-
         if column_names is True:
-            columns = cursor.description
-            fields = map(lambda x: x[0], columns)
-            result = [dict(zip(fields, row)) for row in result]
+            result = [dict((cursor.description[i][0], value)
+                           for i, value in enumerate(row)) for row in result]
             cursor.close()
             connection.close()
             return result
