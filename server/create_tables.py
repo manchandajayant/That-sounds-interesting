@@ -61,13 +61,14 @@ def create_tables(connection):
     `file_url` varchar(200) NOT NULL,\
     `user_id` int(11) NOT NULL,\
     `image` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,\
-    `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP)"
+    `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,\
+    `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP)"
 
     CREATE_USER_TABLE = "CREATE TABLE users(\
     `id` int(11) primary key NOT NULL AUTO_INCREMENT,\
     `username` varchar(100) NOT NULL,`email` varchar(255) NOT NULL,\
     `password` varchar(255) DEFAULT NULL,`google_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,\
-    `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP)"
+    `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,`updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP)"
 
     # CREATE SPACES AND USERS TABLE
     try:

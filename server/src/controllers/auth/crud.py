@@ -21,7 +21,7 @@ class CRUD:
             return json.dumps({'error': 'Invalid Request, information is missing'}, default=set_default, sort_keys=True, indent=4), HTTP_400_BAD_REQUEST
 
         # check for empty strings
-        if len(email) is 0 or len(password) is 0 or len(username) is 0:
+        if len(email) == 0 or len(password) == 0 or len(username) == 0:
             return json.dumps({'error': 'Invalid Request, information is missing'}, default=set_default, sort_keys=True, indent=4), HTTP_400_BAD_REQUEST
 
         # Validate Email
