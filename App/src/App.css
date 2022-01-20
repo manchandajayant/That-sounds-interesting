@@ -80,3 +80,18 @@ body{
   left: 0;
   right: 0;
 }
+
+#marker{
+  color: rgb(255,20,147,0.7);
+}
+
+.mapboxgl-popup.mapboxgl-popup-anchor-top {
+  opacity: 0;
+}
+
+.mapboxgl-popup.mapboxgl-popup-anchor-top:hover {
+  opacity: 100%;
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}

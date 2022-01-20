@@ -15,6 +15,7 @@ function Login() {
 			showCancelButton: false,
 			confirmButtonText: 'Login',
 			showLoaderOnConfirm: true,
+			backdrop:true,
 			preConfirm: (login) => {
 				return [
 					document.getElementById('swal-input1').value,
@@ -34,6 +35,7 @@ function Login() {
 						})
 			},
 			allowOutsideClick: () => {
+				
 				return navigate('/'), !Swal.isLoading()
 			}
 		}).then((result) => {
