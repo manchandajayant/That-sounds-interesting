@@ -8,7 +8,7 @@ const Map = () => {
 	const [viewport, setViewport] = useState({
 		latitude: 51.47,
 		longitude: 0.45,
-		zoom: 1,
+		zoom: 1.7,
 	});
 	const [showPopup, togglePopup] = React.useState(false);
 	const handleClick = () => {

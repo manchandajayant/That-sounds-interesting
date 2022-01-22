@@ -40,6 +40,7 @@ body{
 }
 
 .text-add-place{
+  color: #fff;
   text-align: end;
   font-size: 14px;
   z-index: 1;
@@ -48,7 +49,7 @@ body{
 
 .text-add-place p a{
   text-decoration: none;
-  color: aliceblue;
+  color: #fff;
 }
 
 .text-heading-nav{
@@ -62,7 +63,11 @@ body{
 }
 
 #div-add-place{
-  margin-top: 15vh;
+  margin-top: 1vh;
+}
+
+#div-add-place-results{
+  margin-top: 1vh;
 }
 
 #div-add-place-file-selected{
@@ -94,4 +99,31 @@ body{
   width: 150px;
   height: 150px;
   opacity: 1;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+.results-container{
+  display: block;
+  margin-top: 1vh;
+  border: solid 0.5px #898989;
+  border-radius: 1px;
+  overflow-y: scroll;
+}
+
+ol, ul{
+  padding:0px;
+}
+
+dl, ol, ul{
+  padding: 4vh 0px 0px 0px;
+}
+
+
+.dropdown-divider{
+  color: #898989;
+  margin: 0px;
 }
