@@ -1,0 +1,205 @@
+{
+	"type": "FeatureCollection",
+	"query": ["qutub", "minar"],
+	"features": [
+		{
+			"id": "poi.1236950633883",
+			"type": "Feature",
+			"place_type": ["poi"],
+			"relevance": 0.96,
+			"properties": {
+				"foursquare": "4ba47c9bf964a520fe9f38e3",
+				"wikidata": "Q187635",
+				"landmark": true,
+				"address": "Lado Sarai",
+				"category": "monument, landmark, historic"
+			},
+			"text": "Qutab Minar",
+			"place_name": "Qutab Minar, Lado Sarai, New Delhi, Delhi, India",
+			"matching_text": "Qutub Minar",
+			"matching_place_name": "Qutub Minar, Lado Sarai, New Delhi, Delhi, India",
+			"center": [77.185726375, 28.524605875],
+			"geometry": {
+				"coordinates": [77.185726375, 28.524605875],
+				"type": "Point"
+			},
+			"context": [
+				{
+					"id": "neighborhood.10662356146237620",
+					"text": "Seth Sarai"
+				},
+				{
+					"id": "locality.14700827201199380",
+					"wikidata": "Q2988403",
+					"text": "Mehrauli"
+				},
+				{
+					"id": "place.8915687851165670",
+					"wikidata": "Q987",
+					"text": "New Delhi"
+				},
+				{
+					"id": "district.6340385930354300",
+					"wikidata": "Q2061938",
+					"text": "South Delhi"
+				},
+				{
+					"id": "region.9972194009026890",
+					"wikidata": "Q1353",
+					"short_code": "IN-DL",
+					"text": "Delhi"
+				},
+				{
+					"id": "country.2782945337",
+					"wikidata": "Q668",
+					"short_code": "in",
+					"text": "India"
+				}
+			]
+		},
+		{
+			"id": "poi.240518251769",
+			"type": "Feature",
+			"place_type": ["poi"],
+			"relevance": 0.954545,
+			"properties": {
+				"landmark": true,
+				"address": "Lado Sarai",
+				"foursquare": "4c220b44497cb71319dc6cd8"
+			},
+			"text": "Qutab Minar Metro Station",
+			"place_name": "Qutab Minar Metro Station, Lado Sarai, New Delhi, Delhi, India",
+			"center": [77.186508, 28.512935],
+			"geometry": {
+				"coordinates": [77.186508, 28.512935],
+				"type": "Point"
+			},
+			"context": [
+				{
+					"id": "neighborhood.14253799139602660",
+					"text": "Mittal Garden"
+				},
+				{
+					"id": "locality.10200563035075090",
+					"text": "Sainik Farm"
+				},
+				{
+					"id": "place.8915687851165670",
+					"wikidata": "Q987",
+					"text": "New Delhi"
+				},
+				{
+					"id": "district.6340385930354300",
+					"wikidata": "Q2061938",
+					"text": "South Delhi"
+				},
+				{
+					"id": "region.9972194009026890",
+					"wikidata": "Q1353",
+					"short_code": "IN-DL",
+					"text": "Delhi"
+				},
+				{
+					"id": "country.2782945337",
+					"wikidata": "Q668",
+					"short_code": "in",
+					"text": "India"
+				}
+			]
+		},
+		{
+			"id": "locality.5520728196314980",
+			"type": "Feature",
+			"place_type": ["locality"],
+			"relevance": 0.5,
+			"properties": {},
+			"text": "Minard West",
+			"place_name": "Minard West, An Mhin Aird, Kerry, Ireland",
+			"bbox": [-10.152844421, 52.112031278, -10.121306214, 52.134849665],
+			"center": [-10.1403, 52.1228],
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-10.1403, 52.1228]
+			},
+			"context": [
+				{
+					"id": "place.19596298705093540",
+					"text": "An Mhin Aird"
+				},
+				{
+					"id": "region.10410897369017980",
+					"wikidata": "Q184469",
+					"short_code": "IE-KY",
+					"text": "Kerry"
+				},
+				{
+					"id": "country.15270200162111290",
+					"wikidata": "Q27",
+					"short_code": "ie",
+					"text": "Ireland"
+				}
+			]
+		},
+		{
+			"id": "place.6006341047998700",
+			"type": "Feature",
+			"place_type": ["place"],
+			"relevance": 0.5,
+			"properties": {},
+			"text": "منعر",
+			"place_name": "منعر, Al Mahrah, Yemen",
+			"matching_text": "Minar",
+			"matching_place_name": "Minar, Al Mahrah, Yemen",
+			"center": [51.299999943, 16.716667071],
+			"geometry": {
+				"type": "Point",
+				"coordinates": [51.299999943, 16.716667071]
+			},
+			"context": [
+				{
+					"id": "region.10114998051491180",
+					"wikidata": "Q275752",
+					"short_code": "YE-MR",
+					"text": "Al Mahrah"
+				},
+				{
+					"id": "country.7856413383804900",
+					"wikidata": "Q805",
+					"short_code": "ye",
+					"text": "Yemen"
+				}
+			]
+		},
+		{
+			"id": "place.1476899095159980",
+			"type": "Feature",
+			"place_type": ["place"],
+			"relevance": 0.5,
+			"properties": {},
+			"text": "منارة",
+			"place_name": "منارة, Raymah, Yemen",
+			"matching_text": "Minara",
+			"matching_place_name": "Minara, Raymah, Yemen",
+			"center": [43.583332971, 14.633333075],
+			"geometry": {
+				"type": "Point",
+				"coordinates": [43.583332971, 14.633333075]
+			},
+			"context": [
+				{
+					"id": "region.8315000181063290",
+					"wikidata": "Q475033",
+					"short_code": "YE-RA",
+					"text": "Raymah"
+				},
+				{
+					"id": "country.7856413383804900",
+					"wikidata": "Q805",
+					"short_code": "ye",
+					"text": "Yemen"
+				}
+			]
+		}
+	],
+	"attribution": "NOTICE: © 2021 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained. POI(s) provided by Foursquare."
+}
