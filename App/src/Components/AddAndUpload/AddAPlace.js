@@ -86,7 +86,7 @@ export default function AddAPlace() {
 				}
 			>
 				{!placeTrue && (
-					<div>
+					<div className="mdashboard-box">
 						<div className="input-group">
 							<input
 								type="text"
@@ -141,6 +141,7 @@ export default function AddAPlace() {
 						) : (
 							<></>
 						)}
+						<div />
 						<div className="mt-5">
 							<button
 								className="btn btn-outline-secondary w-50"

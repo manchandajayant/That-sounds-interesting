@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN;
 
 const Map = () => {
@@ -10,32 +10,47 @@ const Map = () => {
 		longitude: 0.45,
 		zoom: 1.7,
 	});
+
+	useEffect(() => {
+		function onBtnClicked() {
+			console.log("e");
+		}
+	}, []);
+
+	const onBtnClicked = () => {
+		console.log("d");
+	};
+
 	const [showPopup, togglePopup] = React.useState(false);
 	const handleClick = () => {
-		Swal.fire({
-			title: '<strong>HTML <u>example</u></strong>',
-			icon: 'info',
-			html:
-			  'You can use <b>bold text</b>, ' +
-			  '<a href="//sweetalert2.github.io">links</a> ' +
-			  'and other HTML tags',
-			showCloseButton: true,
-			showCancelButton: true,
-			focusConfirm: false,
-			confirmButtonText:
-			  '<i class="fa fa-thumbs-up"></i> Great!',
-			confirmButtonAriaLabel: 'Thumbs up, great!',
-			cancelButtonText:
-			  '<i class="fa fa-thumbs-down"></i>',
-			cancelButtonAriaLabel: 'Thumbs down'
-		  })
+		Swal.fire(
+			{
+				title: "Space Name",
+				html:
+					"You can use <b>bold text</b>, " +
+					'<a href="//sweetalert2.github.io">links</a> ' +
+					"and other HTML tags" +
+					'<button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn"  id="btn">' +
+					"Button1" +
+					"</button>",
+				showCloseButton: true,
+				showCancelButton: false,
+				allowOutsideClick: false,
+				focusConfirm: false,
+			}
+		).then((value) => {
+			console.log(value);
+		});
+		const btn = document.getElementById("btn");
+		btn.onclick = (e) => {
+			console.log(e);
+		};
 	};
 
 	return (
 		<div className="map-container">
 			<ReactMapGL
 				{...viewport}
-				
 				height={"100vh"}
 				width={"100vw"}
 				mapboxApiAccessToken={accessToken}
