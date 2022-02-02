@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Swal from "sweetalert2";
+import { connectAudioNode, disconnectAudioNode } from "./webAudio";
+
 const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN;
 
 const Map = () => {
@@ -11,39 +13,34 @@ const Map = () => {
 		zoom: 1.7,
 	});
 
-	useEffect(() => {
-		function onBtnClicked() {
-			console.log("e");
-		}
-	}, []);
-
-	const onBtnClicked = () => {
-		console.log("d");
-	};
-
 	const [showPopup, togglePopup] = React.useState(false);
+	const [audioTrue, setaudioTrue] = useState(false);
 	const handleClick = () => {
-		Swal.fire(
-			{
-				title: "Space Name",
-				html:
-					"You can use <b>bold text</b>, " +
-					'<a href="//sweetalert2.github.io">links</a> ' +
-					"and other HTML tags" +
-					'<button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn"  id="btn">' +
-					"Button1" +
-					"</button>",
-				showCloseButton: true,
-				showCancelButton: false,
-				allowOutsideClick: false,
-				focusConfirm: false,
-			}
-		).then((value) => {
-			console.log(value);
+		var counter = 0;
+		Swal.fire({
+			title: "Space Name",
+			html:
+				"<div style='display:block'><img alt='null' src='https://www.maeshowe.co.uk/images/maeshowefisheyeint204p.jpg' height='150px' width='150px'/>" + 
+				'<button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn"  id="btn">' +
+				"Microphone" +
+				"</button></div>",
+			showCloseButton: true,
+			showCancelButton: false,
+			allowOutsideClick: false,
+			focusConfirm: false,
+		}).then((value) => {
+			if (audioTrue) disconnectAudioNode();
 		});
 		const btn = document.getElementById("btn");
 		btn.onclick = (e) => {
-			console.log(e);
+			setaudioTrue(true);
+			// This is one of the shoddiest solutions to anything ever, must improve on this.
+			counter++;
+			if (counter % 2 !== 0) {
+				connectAudioNode();
+			} else {
+				disconnectAudioNode();
+			}
 		};
 	};
 
