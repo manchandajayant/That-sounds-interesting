@@ -11,18 +11,17 @@ const getLiveAudio = async (audioCtx) => {
 	return audioCtx.createMediaStreamSource(stream);
 };
 
-export async function connectAudioNode() {
+export async function connectAudioNode(space) {
 	audioCtx = new AudioContext();
 	convolver = audioCtx.createConvolver();
 	input = await getLiveAudio(audioCtx);
 
 	convolver.buffer = await getImpulseBuffer(
 		audioCtx,
-		process.env.PUBLIC_URL + "/assets/ham.wav"
+		process.env.PUBLIC_URL + `/assets/${space.ir}`
 	);
 	input.connect(convolver).connect(audioCtx.destination);
 }
-
 
 export function disconnectAudioNode() {
 	convolver.disconnect();
