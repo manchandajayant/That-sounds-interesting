@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Swal from "sweetalert2";
 import { connectAudioNode, disconnectAudioNode } from "./webAudio";
-import data from './data.json'
+import data from "./data.json";
 const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN;
 
 const Map = () => {
@@ -15,8 +15,10 @@ const Map = () => {
 
 	const [showPopup, togglePopup] = React.useState(false);
 	const [audioTrue, setaudioTrue] = useState(false);
+
 	const handleClick = (space) => {
 		var counter = 0;
+		var btnClicked = true;
 		Swal.fire({
 			imageUrl: space.image,
 			imageHeight: 400,
@@ -34,11 +36,12 @@ const Map = () => {
 			focusConfirm: false,
 			showConfirmButton: false,
 		}).then(() => {
-			if (audioTrue) disconnectAudioNode();
+			if (audioTrue || btnClicked) disconnectAudioNode();
 		});
 		const btn = document.getElementById("btn");
 		btn.onclick = () => {
 			setaudioTrue(true);
+			btnClicked = true;
 			// This is one of the shoddiest solutions to anything ever, must improve on this.
 			counter++;
 			if (counter % 2 !== 0) {
@@ -53,6 +56,7 @@ const Map = () => {
 		};
 	};
 
+
 	return (
 		<div className="map-container">
 			<ReactMapGL
@@ -64,18 +68,20 @@ const Map = () => {
 				onViewportChange={(nextViewport) => setViewport(nextViewport)}
 			>
 				{" "}
-				{data.map((space) => {
+				{data.map((space, i) => {
 					return (
-						<Marker
-							latitude={space.lat}
-							longitude={space.lng}
-							offsetLeft={-7}
-							offsetTop={-20}
-							captureClick={true}
-							onClick={() => handleClick(space)}
-						>
-							<i className="fas fa-circle" id="marker"></i>
-						</Marker>
+						<div key={i} data-toggle="tooltip" data-placement="top" title={space.name}>
+							<Marker
+								latitude={space.lat}
+								longitude={space.lng}
+								offsetLeft={-7}
+								offsetTop={-20}
+								captureClick={true}
+								onClick={() => handleClick(space)}
+							>
+								<i className="fas fa-circle" id="marker" ></i>
+							</Marker>
+						</div>
 					);
 				})}
 				{showPopup && (

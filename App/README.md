@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Collection of interesting sounding spaces
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Webpage Live [here](https://tsi.netlify.com)
 
-## Available Scripts
 
-In the project directory, you can run:
+## About the project
 
-### `npm start`
+I am a sound artist and really interested in archiving sound of physical spaces in forms of impulse responses in a common respository.
+Due to the lockdowns we have had over the past 2 years, I haven not been able to collect IR data around India and my city of Delhi, but i plan to do that as soon as things go back to a bit normal. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I have made this app for anyone to be able to experience the sound of these spaces. It connects to your browser microphone. 
+Be sure to use headphones or a sound setup to avoid a feedback loop.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+For now i am mostly using data from [https://openairlib.net](https://openairlib.net), a project from the university of york and EchoThief impulse response library. 
 
-### `npm test`
+I am currently setting up a process for anyone to be able to add an impulse response for a place to the respository. If you would like to do that now, you could mail me at [jayantmanchanda1@gmail.com](jayantmanchanda1@gmail.com)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Front end
 
-### `npm run build`
+- React
+- Bootstrap
+- Mapbox
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Back end
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Python Flask 
+- MYSQL Database
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Storage
+- Cloudinary
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Demo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Back end
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can find the repository for the back end [here](https://github.com/manchandajayant/Verber-Back-End)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Current state
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/16384a1f-17d8-4f3c-a1f6-8c7d0b1fc9b5/deploy-status)](https://app.netlify.com/sites/verberapp/deploys)

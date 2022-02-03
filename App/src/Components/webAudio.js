@@ -16,10 +16,7 @@ export async function connectAudioNode(space) {
 	convolver = audioCtx.createConvolver();
 	input = await getLiveAudio(audioCtx);
 
-	convolver.buffer = await getImpulseBuffer(
-		audioCtx,
-		process.env.PUBLIC_URL + `/assets/${space.ir}`
-	);
+	convolver.buffer = await getImpulseBuffer(audioCtx, space.ir);
 	input.connect(convolver).connect(audioCtx.destination);
 }
 

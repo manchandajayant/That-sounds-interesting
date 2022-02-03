@@ -4,14 +4,14 @@
         "lat": 55.78214,
         "lng": -4.03428,
         "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/The_golden_glow_of_the_Hamilton_mausoleum_on_a_December_afternoon._-_geograph.org.uk_-_175523.jpg",
-        "ir":"ham.wav"
+        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887602/impulse_responses_spaces/Hamilton/cii184jzf7tbtbcoesyl.wav"
     },
     {
         "name": "Maes Howe",
         "lat": 58.996525,
         "lng": -3.188173,
         "image": "https://www.maeshowe.co.uk/images/maeshowefisheyeint204p.jpg",
-        "ir":"maes.wav"
+        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887553/impulse_responses_spaces/Maes_Howe/h1ivtumu8tkl7cs3lkxq.wav"
     },
     {
         "name": "Tvísöngur Sound Sculpture",
@@ -67,6 +67,27 @@
         "lat":-33.8570442199707,
         "lng": 151.21514892578125,
         "image": "https://images.adsttc.com/media/images/5e41/cdf3/3312/fd25/4b00/0455/large_jpg/1.jpg?1581370860",
-        "ir":"maes.wav"
+        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887882/impulse_responses_spaces/Sydney-opera-house/thztjjbayp89ovvq9aq0.wav"
+    },
+    {
+        "name": "Byron Glacier",
+        "lat":60.7603984,
+        "lng": -148.8464738,
+        "image": "https://i0.wp.com/livetravelteach.com/wp-content/uploads/2019/11/Blue-Ice-Cave.jpg?resize=1024%2C680",
+        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887829/impulse_responses_spaces/Byron-glacier/xy7hqqik5ar2vxxza7bu.wav"
+    },
+    {
+        "name": "The Sleeping Shark Cave",
+        "lat":21.2321047,
+        "lng": -86.7322281,
+        "image": "https://stayclosetravelfar.com/wp-content/uploads/2019/01/cenote-tak-be-ha-tulum-mexico.jpg",
+        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887796/impulse_responses_spaces/Sleeping-shark-cave/t2wn3ubmgmbvyjublyxx.wav"
+    },
+    {
+        "name": "Echo Bridge",
+        "lat":42.3154181,
+        "lng": -71.2262015,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Echo_Bridge_-_Newton%2C_MA_-_DSC09470.jpg/500px-Echo_Bridge_-_Newton%2C_MA_-_DSC09470.jpg",
+        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887925/impulse_responses_spaces/Echo-bridge/fji6pgwaf6bgc8chkq47.wav"
     }
 ]
