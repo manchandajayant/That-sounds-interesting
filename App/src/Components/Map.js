@@ -18,28 +18,36 @@ const Map = () => {
 	const handleClick = () => {
 		var counter = 0;
 		Swal.fire({
-			title: "Space Name",
+			imageUrl:
+				"https://www.maeshowe.co.uk/images/maeshowefisheyeint204p.jpg",
+			imageHeight: 400,
+			imageWidth: 400,
+			imageAlt: "A tall image",
+			title: "Maes Howe",
 			html:
-				"<div style='display:block'><img alt='null' src='https://www.maeshowe.co.uk/images/maeshowefisheyeint204p.jpg' height='150px' width='150px'/>" + 
+				"<div style='display:block'>" +
 				'<button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn"  id="btn">' +
-				"Microphone" +
+				"<i class='fa fa-microphone fa-2x' aria-hidden='true' id='microphone'></i>" +
 				"</button></div>",
 			showCloseButton: true,
 			showCancelButton: false,
 			allowOutsideClick: false,
 			focusConfirm: false,
-		}).then((value) => {
+			showConfirmButton: false,
+		}).then(() => {
 			if (audioTrue) disconnectAudioNode();
 		});
 		const btn = document.getElementById("btn");
-		btn.onclick = (e) => {
+		btn.onclick = () => {
 			setaudioTrue(true);
 			// This is one of the shoddiest solutions to anything ever, must improve on this.
 			counter++;
 			if (counter % 2 !== 0) {
 				connectAudioNode();
+				document.getElementById('microphone').style.color = 'rgb(255,20,147,0.7)'
 			} else {
 				disconnectAudioNode();
+				document.getElementById('microphone').style.color = 'rgb(0,0,0,0.7)'
 			}
 		};
 	};
