@@ -7,16 +7,6 @@ body {
 	text-align: center;
 }
 
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
-}
 
 .App-header {
 	min-height: 100vh;
@@ -39,7 +29,8 @@ body {
 }
 
 .text-add-place {
-	color: #fff;
+	color: #FFFFFF;
+  filter: brightness(100%);
 	text-align: end;
 	font-size: 14px;
 	z-index: 1;
@@ -48,13 +39,21 @@ body {
 
 .text-add-place p a {
 	text-decoration: none;
-	color: #fff;
+  color: #FFFFFF;
+
+	
 }
 
 .text-heading-nav {
 	z-index: 1;
 	text-align: start;
 	width: 50%;
+}
+
+.text-heading-nav h1 a{
+	text-decoration: none;
+  color: #FFFFFF;
+  filter: brightness(100%);
 }
 
 .input-group input {
@@ -143,4 +142,8 @@ ul {
 
 .swal2-popup {
 	background-color: #f3f3f3;
+}
+
+.swal2-styled.swal2-confirm{
+  background-color: rgb(255, 20, 147, 0.7);
 }
