@@ -1,10 +1,10 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Swal from "sweetalert2";
 import { connectAudioNode, disconnectAudioNode } from "./webAudio";
 import data from "./data.json";
-const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN ;
+const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN;
 
 const Map = () => {
 	const [viewport, setViewport] = useState({
@@ -56,7 +56,6 @@ const Map = () => {
 		};
 	};
 
-
 	return (
 		<div className="map-container">
 			<ReactMapGL
@@ -70,7 +69,12 @@ const Map = () => {
 				{" "}
 				{data.map((space, i) => {
 					return (
-						<div key={i} data-toggle="tooltip" data-placement="top" title={space.name}>
+						<div
+							key={i}
+							data-toggle="tooltip"
+							data-placement="top"
+							title={space.name}
+						>
 							<Marker
 								latitude={space.lat}
 								longitude={space.lng}
@@ -79,7 +83,7 @@ const Map = () => {
 								captureClick={true}
 								onClick={() => handleClick(space)}
 							>
-								<i className="fas fa-circle" id="marker" ></i>
+								<i className="fas fa-circle" id="marker"></i>
 							</Marker>
 						</div>
 					);
