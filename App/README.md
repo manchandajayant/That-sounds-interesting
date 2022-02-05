@@ -38,4 +38,4 @@ You can find the repository for the back end [here](https://github.com/manchanda
 
 ## Current state
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/16384a1f-17d8-4f3c-a1f6-8c7d0b1fc9b5/deploy-status)](https://app.netlify.com/sites/verberapp/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cfacb50c-0102-4453-a800-4a26b44a0c8f/deploy-status)](https://app.netlify.com/sites/that-sounds-interesting/deploys)
