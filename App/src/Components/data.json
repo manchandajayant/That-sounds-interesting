@@ -1,93 +1,100 @@
 [
-    {
-        "name": "Hamilton Mausoleum",
-        "lat": 55.78214,
-        "lng": -4.03428,
-        "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/The_golden_glow_of_the_Hamilton_mausoleum_on_a_December_afternoon._-_geograph.org.uk_-_175523.jpg",
-        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887602/impulse_responses_spaces/Hamilton/cii184jzf7tbtbcoesyl.wav"
-    },
-    {
-        "name": "Maes Howe",
-        "lat": 58.996525,
-        "lng": -3.188173,
-        "image": "https://www.maeshowe.co.uk/images/maeshowefisheyeint204p.jpg",
-        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887553/impulse_responses_spaces/Maes_Howe/h1ivtumu8tkl7cs3lkxq.wav"
-    },
-    {
-        "name": "Tvísöngur Sound Sculpture",
-        "lat": 65.267807,
-        "lng": -13.981864,
-        "image": "https://visitseydisfjordur.com/wp-content/uploads/2019/07/ljosm-alla-borgthors-5-1-700x700.jpg",
-        "ir":"maes.wav"
-    },
-    {
-        "name": "R1 Nuclear Reactor Hall",
-        "lat":59.3499986,
-        "lng": 18.06749973,
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/2021_KTH_R1%2C_image_1.jpg/500px-2021_KTH_R1%2C_image_1.jpg",
-        "ir":"maes.wav"
-    },
-    {
-        "name": "Spokane Woman’s Club",
-        "lat":47.6473,
-        "lng": -117.4329,
-        "image": "https://webfiles.york.ac.uk/OPENAIR/IRs/spokane-womans-club/images/swc.jpg",
-        "ir":"maes.wav"
-    },
-    {
-        "name": "St. George’s Episcopal Church",
-        "lat":38.3028,
-        "lng": -77.4598,
-        "image": "https://webfiles.york.ac.uk/OPENAIR/IRs/st-georges-episcopal-church/images/img_0757_1.jpg",
-        "ir":"maes.wav"
-    },
-    {
-        "name": "Newgrange",
-        "lat":53.6947,
-        "lng": -6.4756,
-        "image": "https://webfiles.york.ac.uk/OPENAIR/IRs/newgrange/images/20190506_065329.jpg",
-        "ir":"maes.wav"
-    },
-    {
-        "name": "Koli National Park",
-        "lat":63.0878,
-        "lng": 29.8277,
-        "image": "https://webfiles.york.ac.uk/OPENAIR/IRs/koli-national-park-winter/images/site_3_c.jpg",
-        "ir":"maes.wav"
-    },
-    {
-        "name": "Saint Lawrence's Church",
-        "lat":50.9212,
-        "lng": 4.9541,
-        "image": "https://webfiles.york.ac.uk/OPENAIR/IRs/saint-lawrence-church-molenbeek-wersbeek-belgium/images/sint_laurentius_kerkraamcolorkl.jpg",
-        "ir":"maes.wav"
-    },
-    {
-        "name": "Concert Hall, Sydney Opera House",
-        "lat":-33.8570442199707,
-        "lng": 151.21514892578125,
-        "image": "https://images.adsttc.com/media/images/5e41/cdf3/3312/fd25/4b00/0455/large_jpg/1.jpg?1581370860",
-        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887882/impulse_responses_spaces/Sydney-opera-house/thztjjbayp89ovvq9aq0.wav"
-    },
-    {
-        "name": "Byron Glacier",
-        "lat":60.7603984,
-        "lng": -148.8464738,
-        "image": "https://i0.wp.com/livetravelteach.com/wp-content/uploads/2019/11/Blue-Ice-Cave.jpg?resize=1024%2C680",
-        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887829/impulse_responses_spaces/Byron-glacier/xy7hqqik5ar2vxxza7bu.wav"
-    },
-    {
-        "name": "The Sleeping Shark Cave",
-        "lat":21.2321047,
-        "lng": -86.7322281,
-        "image": "https://stayclosetravelfar.com/wp-content/uploads/2019/01/cenote-tak-be-ha-tulum-mexico.jpg",
-        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887796/impulse_responses_spaces/Sleeping-shark-cave/t2wn3ubmgmbvyjublyxx.wav"
-    },
-    {
-        "name": "Echo Bridge",
-        "lat":42.3154181,
-        "lng": -71.2262015,
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Echo_Bridge_-_Newton%2C_MA_-_DSC09470.jpg/500px-Echo_Bridge_-_Newton%2C_MA_-_DSC09470.jpg",
-        "ir":"https://res.cloudinary.com/manjay/video/upload/v1643887925/impulse_responses_spaces/Echo-bridge/fji6pgwaf6bgc8chkq47.wav"
-    }
+	{
+		"name": "Hamilton Mausoleum",
+		"lat": 55.78214,
+		"lng": -4.03428,
+		"image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/The_golden_glow_of_the_Hamilton_mausoleum_on_a_December_afternoon._-_geograph.org.uk_-_175523.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1643887602/impulse_responses_spaces/Hamilton/cii184jzf7tbtbcoesyl.wav"
+	},
+	{
+		"name": "Maes Howe",
+		"lat": 58.996525,
+		"lng": -3.188173,
+		"image": "https://www.maeshowe.co.uk/images/maeshowefisheyeint204p.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1643887553/impulse_responses_spaces/Maes_Howe/h1ivtumu8tkl7cs3lkxq.wav"
+	},
+	{
+		"name": "Tvísöngur Sound Sculpture",
+		"lat": 65.267807,
+		"lng": -13.981864,
+		"image": "https://visitseydisfjordur.com/wp-content/uploads/2019/07/ljosm-alla-borgthors-5-1-700x700.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052770/impulse_responses_spaces/Tvisongur/t0aad8wxemk8pmcxh5r8.wav"
+	},
+	{
+		"name": "R1 Nuclear Reactor Hall",
+		"lat": 59.3499986,
+		"lng": 18.06749973,
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/2021_KTH_R1%2C_image_1.jpg/500px-2021_KTH_R1%2C_image_1.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052665/impulse_responses_spaces/R1-nuclear-reactor/n2tkfv1iac0rcxiszofr.wav"
+	},
+	{
+		"name": "Spokane Woman’s Club",
+		"lat": 47.6473,
+		"lng": -117.4329,
+		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/spokane-womans-club/images/swc.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052397/impulse_responses_spaces/spokane-womans-club/uf1hahtwjucgsv4v5roz.wav"
+	},
+	{
+		"name": "St. George’s Episcopal Church",
+		"lat": 38.3028,
+		"lng": -77.4598,
+		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/st-georges-episcopal-church/images/img_0757_1.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052732/impulse_responses_spaces/st-georges-episcopal/bfz9bd7453vgac2ur4da.wav"
+	},
+	{
+		"name": "Newgrange",
+		"lat": 53.6947,
+		"lng": -6.4756,
+		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/newgrange/images/20190506_065329.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052621/impulse_responses_spaces/Newgrange/tbjzfb3tib4p1ogo6k5u.wav"
+	},
+	{
+		"name": "Koli National Park",
+		"lat": 63.0878,
+		"lng": 29.8277,
+		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/koli-national-park-winter/images/site_3_c.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052500/impulse_responses_spaces/Koli-national-park/pv2wqbsvtmmtuhgc4jnw.wav"
+	},
+	{
+		"name": "Saint Lawrence's Church",
+		"lat": 50.9212,
+		"lng": 4.9541,
+		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/saint-lawrence-church-molenbeek-wersbeek-belgium/images/sint_laurentius_kerkraamcolorkl.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052539/impulse_responses_spaces/molenbeek-church/e2rjfc9md20bswvssuhl.wav"
+	},
+	{
+		"name": "Concert Hall, Sydney Opera House",
+		"lat": -33.8570442199707,
+		"lng": 151.21514892578125,
+		"image": "https://images.adsttc.com/media/images/5e41/cdf3/3312/fd25/4b00/0455/large_jpg/1.jpg?1581370860",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1643887882/impulse_responses_spaces/Sydney-opera-house/thztjjbayp89ovvq9aq0.wav"
+	},
+	{
+		"name": "Byron Glacier",
+		"lat": 60.7603984,
+		"lng": -148.8464738,
+		"image": "https://i0.wp.com/livetravelteach.com/wp-content/uploads/2019/11/Blue-Ice-Cave.jpg?resize=1024%2C680",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1643887829/impulse_responses_spaces/Byron-glacier/xy7hqqik5ar2vxxza7bu.wav"
+	},
+	{
+		"name": "The Sleeping Shark Cave",
+		"lat": 21.2321047,
+		"lng": -86.7322281,
+		"image": "https://stayclosetravelfar.com/wp-content/uploads/2019/01/cenote-tak-be-ha-tulum-mexico.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1643887796/impulse_responses_spaces/Sleeping-shark-cave/t2wn3ubmgmbvyjublyxx.wav"
+	},
+	{
+		"name": "Echo Bridge",
+		"lat": 42.3154181,
+		"lng": -71.2262015,
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Echo_Bridge_-_Newton%2C_MA_-_DSC09470.jpg/500px-Echo_Bridge_-_Newton%2C_MA_-_DSC09470.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1643887925/impulse_responses_spaces/Echo-bridge/fji6pgwaf6bgc8chkq47.wav"
+	},
+	{
+		"name": "Nashville First Baptist Church",
+		"lat": 36.15916061401367,
+		"lng": -86.78053283691406,
+		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/1st-baptist-nashville/images/first_baptist_church_of_nashville_northwest_corner_2.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052984/impulse_responses_spaces/Nashville-first-baptist-church/eqlagsmhqmiqygmy41ws.wav"
+	}
 ]

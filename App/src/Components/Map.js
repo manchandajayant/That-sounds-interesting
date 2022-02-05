@@ -4,7 +4,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Swal from "sweetalert2";
 import { connectAudioNode, disconnectAudioNode } from "./webAudio";
 import data from "./data.json";
-const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN;
+const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN ;
 
 const Map = () => {
 	const [viewport, setViewport] = useState({
