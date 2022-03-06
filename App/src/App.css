@@ -147,3 +147,14 @@ ul {
 .swal2-styled.swal2-confirm{
   background-color: rgb(255, 20, 147, 0.7);
 }
+
+.about{
+	text-align: justify;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 30px;
+}
+
+.about-con{
+	margin-top: 100px;
+}
