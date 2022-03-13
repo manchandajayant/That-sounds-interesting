@@ -96,5 +96,19 @@
 		"lng": -86.78053283691406,
 		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/1st-baptist-nashville/images/first_baptist_church_of_nashville_northwest_corner_2.jpg",
 		"ir": "https://res.cloudinary.com/manjay/video/upload/v1644052984/impulse_responses_spaces/Nashville-first-baptist-church/eqlagsmhqmiqygmy41ws.wav"
+	},
+	{
+		"name": "Jamali Kamali",
+		"lat": 28.519375,
+		"lng": 77.187120,
+		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/1st-baptist-nashville/images/first_baptist_church_of_nashville_northwest_corner_2.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1647162734/impulse_responses_spaces/Jamali%20Kamali/rcligaz5zbybjndbrzzh.wav"
+	},
+	{
+		"name": "Jamali Kamali small Tomb",
+		"lat": 24.520951,
+		"lng": 77.194941,
+		"image": "https://webfiles.york.ac.uk/OPENAIR/IRs/1st-baptist-nashville/images/first_baptist_church_of_nashville_northwest_corner_2.jpg",
+		"ir": "https://res.cloudinary.com/manjay/video/upload/v1647163296/impulse_responses_spaces/Jamali%20Kamali/jes3bfzcz2uc9wgmygkp.wav"
 	}
 ]
