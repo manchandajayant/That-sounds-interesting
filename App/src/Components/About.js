@@ -12,7 +12,7 @@ const About = () => {
     <br />
     <br />
     I am currently setting up a process for anyone to be able to add an impulse response for a place to the respository. If you would like to do that now, you could mail me at jayantmanchanda1@gmail.com
-    <br/>
+    <br />
   </p></div></div>;
 };
 
