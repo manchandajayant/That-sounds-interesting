@@ -3,6 +3,7 @@ import Login from "../Login";
 import Upload from "./Upload";
 import data from "./test.json";
 
+var url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'
 export default function AddAPlace() {
 	const [query, setQuery] = useState("");
 	const [place, setPlace] = useState("");
@@ -41,17 +42,15 @@ export default function AddAPlace() {
 	};
 
 	const setSearchQuery = (e) => {
-		console.log(e.target.value);
 		setQuery(e.target.value);
 	};
 
 	const search = async () => {
-		console.log("data", data);
+
 		const fetchData = await fetch(
-			`https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?access_token=${process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN}`
+			`${url}${query}.json?access_token=${process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN}`
 		);
 		const decodedData = await fetchData.json();
-		console.log(decodedData);
 		setsearchResults(decodedData);
 	};
 
