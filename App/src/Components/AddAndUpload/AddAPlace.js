@@ -42,7 +42,6 @@ export default function AddAPlace() {
 	};
 
 	const setSearchQuery = (e) => {
-		console.log(e.target.value);
 		setQuery(e.target.value);
 	};
 
