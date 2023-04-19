@@ -62,7 +62,7 @@ const Map = () => {
 				{...viewport}
 				height={"100vh"}
 				width={"100vw"}
-				mapboxApiAccessToken={accessToken}
+				mapboxAccessToken={accessToken}
 				mapStyle="mapbox://styles/jayantmanchanda/ckynbop6g56nw14l2m5r2t7bd"
 				onViewportChange={(nextViewport) => setViewport(nextViewport)}
 			>
