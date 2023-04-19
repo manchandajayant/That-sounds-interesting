@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { connectAudioNode, disconnectAudioNode } from "./webAudio";
 import data from "./data.json";
 const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN;
-
+console.log(accessToken)
 const Map = () => {
 	const [viewport, setViewport] = useState({
 		latitude: 40.47,
@@ -62,8 +62,8 @@ const Map = () => {
 				{...viewport}
 				height={"100vh"}
 				width={"100vw"}
-				mapboxAccessToken={accessToken}
-				mapStyle={`mapbox://styles/jayantmanchanda/ckynbop6g56nw14l2m5r2t7bd?access_token=${accessToken}`}
+				mapboxApiAccessToken={accessToken}
+				mapStyle={`mapbox://styles/jayantmanchanda/ckynbop6g56nw14l2m5r2t7bd`}
 				onViewportChange={(nextViewport) => setViewport(nextViewport)}
 			>
 				{" "}
