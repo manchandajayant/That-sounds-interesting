@@ -63,7 +63,7 @@ const Map = () => {
 				height={"100vh"}
 				width={"100vw"}
 				mapboxAccessToken={accessToken}
-				mapStyle="mapbox://styles/jayantmanchanda/ckynbop6g56nw14l2m5r2t7bd"
+				mapStyle={`mapbox://styles/jayantmanchanda/ckynbop6g56nw14l2m5r2t7bd?access_token=${accessToken}`}
 				onViewportChange={(nextViewport) => setViewport(nextViewport)}
 			>
 				{" "}
