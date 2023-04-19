@@ -5,7 +5,7 @@ export default function Navbar() {
 	return (
 		<div className="nav">
 			<div className="text-heading-nav">
-				<h1><Link to="/">THAT SOUNDS INTERESTING</Link></h1>
+				<h1><Link to="/">SOUNDS INTERESTING</Link></h1>
 			</div>
 			<div className="text-add-place">
 				<p
