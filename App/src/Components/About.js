@@ -4,15 +4,14 @@ const About = () => (
     <div className="m-5 about-con">
         <div className="m-5">
             <p className="h-6 about">
-                The App simulates sounds of physical places and let's you expereince them as if you were inside them. It
-                connects to your browser microphone. Be sure to use headphones or a sound setup to avoid a feedback
-                loop.
+                Experience the immersive simulation of real-life environments with our groundbreaking App. By harnessing
+                the power of web audio API and convolution, it brings you lifelike sounds from various physical places,
+                allowing you to feel as if you're actually there. To ensure an optimal experience, make sure to use
+                headphones or a sound setup to prevent any feedback loops.
                 <br />
                 <br />
-                I am a sound artist and interested in archiving sound of physical spaces in forms of impulse responses
-                in a common respository. Due to the lockdowns we have had over the past 2 years, I haven not been able
-                to collect IR data around India and my city of Delhi, but i plan to do that as soon as things go back to
-                a bit normal.
+                As a sound artist, my passion lies in preserving the essence of physical spaces through the art of
+                capturing impulse responses. I aim to contribute to a shared repository of these unique sound archives.
                 <br />
                 <br />
                 Impulse data from <a href="https://openairlib.net">OpenAirLib</a>, a project from the university of york
