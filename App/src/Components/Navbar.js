@@ -25,7 +25,7 @@ export default function Navbar() {
                     onClick={() => {
                         Swal.fire({
                             icon: "What should i do ?",
-                            text: "Click on any pink dot on the map denoting a location, it will open a popup with the selected space. Click on the microphone icon, the browser will ask you for microphone permissions, Once you allow it, you will be able to hear yourself in the selected space. Remember to use headphones to not create a feedback loop",
+                            text: "By interacting with a map, you can explore various locations marked by pink dots. Simply click on a dot, and a popup will appear, providing details about that specific place. If you wish to immerse yourself further, click on the microphone icon. Your browser will prompt you to grant microphone permissions, enabling you to hear your own voice within the selected location. For optimal experience, remember to use headphones to prevent any audio feedback loops.",
                         });
                     }}
                 >
