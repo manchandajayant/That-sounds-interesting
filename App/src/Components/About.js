@@ -4,8 +4,8 @@ const About = () => (
     <div className="m-5 about-con">
         <div className="m-5">
             <p className="h-6 about">
-                Experience the immersive simulation of real-life environments with the App. By harnessing
-                the power of web audio API and convolution, it brings you lifelike sounds from various physical places,
+                Experience the immersive simulation of real-life environments with the app. By harnessing
+                the power of web audio API and convolution, it brings you life like sounds from various physical places,
                 allowing you to feel as if you're actually there. To ensure an optimal experience, make sure to use
                 headphones or a sound setup to prevent any feedback loops.
                 <br />
