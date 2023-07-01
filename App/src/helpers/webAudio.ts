@@ -1,3 +1,5 @@
+import { Space } from "../Types/Space-type";
+
 let convolver: ConvolverNode, audioCtx, input: MediaStreamAudioSourceNode;
 
 const getImpulseBuffer = async (audioCtx: AudioContext, impulseUrl: string): Promise<AudioBuffer> => {
@@ -11,7 +13,7 @@ const getLiveAudio = async (audioCtx: AudioContext): Promise<MediaStreamAudioSou
     return audioCtx?.createMediaStreamSource(stream);
 };
 
-export async function connectAudioNode(space: any) {
+export async function connectAudioNode(space: Space) {
     audioCtx = new AudioContext() as AudioContext;
     convolver = audioCtx.createConvolver();
     input = await getLiveAudio(audioCtx);
