@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import { CONSTANTS } from "../../Constants/constants";
 import { invokeSwal } from "../../helpers/swal";
 
-const Navbar = () => (
+const Navbar: React.FC = (): ReactElement => (
     <div className="nav">
         <div className="text-heading-nav">
             <h1>

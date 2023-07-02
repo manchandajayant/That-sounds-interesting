@@ -1,4 +1,4 @@
-export const CONSTANTS = {
+export const CONSTANTS: Record<string, any> = {
     accessToken: process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN,
     mapStyleURL: `mapbox://styles/jayantmanchanda/ckynbop6g56nw14l2m5r2t7bd`,
     info: {

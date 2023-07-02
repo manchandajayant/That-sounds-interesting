@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Homepage from "./Components/Home/Homepage";
@@ -10,10 +10,9 @@ import About from "./Components/About/About";
 import "./App.css";
 
 function App() {
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState<boolean>(false);
 
-    //choose the screen size
-    const handleResize = () => {
+    const handleResize = (): void => {
         if (window.innerWidth < 720) {
             setIsMobile(true);
         } else {
@@ -21,7 +20,6 @@ function App() {
         }
     };
 
-    // create an event listener
     useEffect(() => {
         window.addEventListener("resize", handleResize);
     });
@@ -35,7 +33,7 @@ function App() {
     if (isMobile) {
         return (
             <div className="App">
-                <div style={{ marginTop: "50%" }}>This only works on the web right now</div>
+                <div style={AppStyle}>This only works on the web right now</div>
             </div>
         );
     } else {
@@ -45,12 +43,12 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/about" element={<About />} />
-                    {/* <Route exact path="/login" element={<Login />} /> */}
-                    {/* <Route exact path="/add" element={<AddAPlace />} /> */}
                 </Routes>
             </div>
         );
     }
 }
+
+const AppStyle = { marginTop: "50%" };
 
 export default App;

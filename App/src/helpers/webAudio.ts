@@ -13,7 +13,7 @@ const getLiveAudio = async (audioCtx: AudioContext): Promise<MediaStreamAudioSou
     return audioCtx?.createMediaStreamSource(stream);
 };
 
-export async function connectAudioNode(space: Space) {
+export async function connectAudioNode(space: Space): Promise<void> {
     audioCtx = new AudioContext() as AudioContext;
     convolver = audioCtx.createConvolver();
     input = await getLiveAudio(audioCtx);
@@ -22,7 +22,7 @@ export async function connectAudioNode(space: Space) {
     input.connect(convolver).connect(audioCtx.destination);
 }
 
-export function disconnectAudioNode() {
+export function disconnectAudioNode(): void {
     convolver.disconnect();
     console.log(input.mediaStream.getAudioTracks()[0].enabled);
 }
