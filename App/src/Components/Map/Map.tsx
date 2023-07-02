@@ -1,13 +1,14 @@
+import "mapbox-gl/dist/mapbox-gl.css";
 import React, { ReactElement, useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
 import Swal from "sweetalert2";
-import { connectAudioNode, disconnectAudioNode } from "../../helpers/webAudio";
-import data from "./data.json";
 import { CONSTANTS } from "../../Constants/constants";
 import { Space } from "../../Types/Space-type";
-import { SpaceComponent } from "./space";
+import { Viewport } from "../../Types/Viewport-type";
+import { connectAudioNode, disconnectAudioNode } from "../../helpers/webAudio";
 import { SpacePopup } from "./Popup";
+import data from "./data.json";
+import { SpaceComponent } from "./space";
 
 const Map: React.FC = (): ReactElement => {
     const [viewport, setViewport] = useState<Viewport>(CONSTANTS.initialViewPort);
@@ -15,7 +16,7 @@ const Map: React.FC = (): ReactElement => {
     const [showPopup, togglePopup] = useState<boolean>(false);
     const [audioTrue, setAudioTrue] = useState<boolean>(false);
 
-    const handleClick = (space: Space) => {
+    const handleClick = (space: Space): void => {
         let counter = 0;
         let btnClicked = true;
         const btn = document.getElementById("btn");
@@ -29,7 +30,7 @@ const Map: React.FC = (): ReactElement => {
         });
 
         if (btn) {
-            btn.onclick = () => {
+            btn.onclick = (): void => {
                 setAudioTrue(true);
                 btnClicked = true;
                 const micElement = document.getElementById("microphone");
@@ -61,12 +62,6 @@ const Map: React.FC = (): ReactElement => {
             </ReactMapGL>
         </div>
     );
-};
-
-type Viewport = {
-    latitude: number;
-    longitude: number;
-    zoom: number;
 };
 
 export default Map;

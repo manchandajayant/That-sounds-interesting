@@ -1,6 +1,6 @@
-import React, { FC, ReactElement } from "react";
+import React, { ReactElement } from "react";
+import { Marker } from "react-map-gl";
 import { Space } from "../../Types/Space-type";
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
 
 type SpaceProps = {
     data: Space[];
