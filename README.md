@@ -25,7 +25,7 @@ I am currently setting up a process for anyone to be able to add an impulse resp
 
 ### Back end 
 
-# Backend is mostly ready but I have not plugged it in yet, due to job and time contraints. If you wish to add recordings to the repo, mail me on jayantmanchanda1@gmail.com
+** Backend is mostly ready but I have not plugged it in yet, due to job and time contraints. If you wish to add recordings to the repo, mail me on jayantmanchanda1@gmail.com
 You can find the repository for the back end [here](https://github.com/manchandajayant/That-sounds-interesting/tree/master/server)
 
 - Python Flask 
