@@ -1,11 +1,10 @@
 import logging
 import os
 from mysql.connector import pooling
-from mysql.connector import connect
 
 
-class query:
-    def __init__(self) -> None:
+class Query:
+    def __init__(self):
         logging.basicConfig(filename="logs/sql_query.log",
                             format='%(asctime)s %(message)s',
                             filemode='w')
@@ -22,23 +21,20 @@ class query:
             'database': db_name,
             'port': 3306,
         }
-        self.cnxpool = pooling.MySQLConnectionPool(
-            pool_name="cnx_pool", pool_size=20, autocommit=True,  **db_config)
-        return self.cnxpool
+        return pooling.MySQLConnectionPool(
+            pool_name="cnx_pool", pool_size=20, autocommit=True, **db_config
+        )
 
     def get_data_query(self, query, column_names=False):
-        cnx = self.create_connection_pool()
-        connection = cnx.get_connection()
-        cursor = connection.cursor()
-        cursor.execute(query)
-        result = cursor.fetchall()
-        if column_names is True:
-            result = [dict((cursor.description[i][0], value)
-                           for i, value in enumerate(row)) for row in result]
-            cursor.close()
-            connection.close()
-            return result
-        else:
-            cursor.close()
-            connection.close()
-            return result
+        cnxpool = self.create_connection_pool()
+        result = None
+        try:
+            with cnxpool.get_connection() as connection:
+                with connection.cursor() as cursor:
+                    cursor.execute(query)
+                    result = cursor.fetchall()
+                    if column_names:
+                        result = [dict(zip([column[0] for column in cursor.description], row)) for row in result]
+        except Exception as e:
+            logging.error(f"Error executing query: {query}, Exception: {str(e)}")
+        return result
