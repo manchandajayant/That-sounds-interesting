@@ -33,7 +33,7 @@ function App() {
     if (isMobile) {
         return (
             <div className="App">
-                <div style={AppStyle}>This only works on the web right now</div>
+                <div style={AppStyle}>This only works on the desktop right now</div>
             </div>
         );
     } else {
