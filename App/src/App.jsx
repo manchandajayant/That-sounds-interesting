@@ -37,7 +37,7 @@ function App() {
 
 	if (isMobile) {
 		return <div className="App">
-			<div style={{ marginTop: "50%" }}>This only works on the web right now</div>
+			<div style={{ marginTop: "50%" }}>Sorry! Mobile broswers are not optimised for this, so it works on desktop right now</div>
 		</div>
 	} else {
 		return (
